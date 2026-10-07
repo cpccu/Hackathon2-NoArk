@@ -35,7 +35,11 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Dynamic event detail page (`/events/[id]`) with live seat capacity bar, calendar export (Google Calendar + `.ics` download), and organizer links
   - Event publishing and editing workflows (`/events/new` and `/events/[id]/edit`) protected by role checks (`club_admin`, `admin`)
   - Full Clubs directory (`/clubs`) and detailed club profiles (`/clubs/[id]`) with leadership and categorized listings
-- [ ] **Phase 5: Event Registration, Waitlist, QR Tickets & Scanner**
+- [x] **Phase 5: Event Registration, Waitlist, QR Tickets & Scanner**
+  - Registration pipeline with capacity threshold detection, deadline check, duplicate registration prevention
+  - Automatic waitlisting with priority promotion upon cancellation
+  - Personal student tickets hub (`/my/events`) featuring high-contrast QR passes, cancellation flow, and Dhaka time display
+  - Organizer check-in scanner (`/events/[id]/checkin`) with camera viewfinder, manual token verification, duplicate scan detection, live metrics, and attendee CSV download
 - [ ] **Phase 6: Campus Bus Schedule & Next-Bus Countdown**
 - [ ] **Phase 7: Smart Helpdesk (FAQs, Admission, Fees, Exams, Contacts)**
 - [ ] **Phase 8: AI Campus Assistant (Gemini RAG Chatbot)**

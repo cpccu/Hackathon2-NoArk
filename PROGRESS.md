@@ -47,7 +47,12 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Instant stop/area search ("Mirpur", "Uttara", "Gabtoli", "Birulia") and direction filtering ("To Campus" / "From Campus")
   - Favourite route bookmarking with persistent client-side storage
   - Prominent hackathon demo data badge and transport office hotline (09643-234234)
-- [ ] **Phase 7: Smart Helpdesk (FAQs, Admission, Fees, Exams, Contacts)**
+- [x] **Phase 7: Smart Helpdesk (FAQs, Admission, Fees, Exams, Contacts)**
+  - Categorized FAQ hub (`/helpdesk`) across 8 official university dimensions with bilingual questions/answers and instant text search
+  - Dedicated `/helpdesk/admission` with verified minimum GPA criteria, document checklist, and step-by-step enrollment roadmap
+  - Dedicated `/helpdesk/fees` with official 100% merit waiver policy matrix, retention CGPA tiers, and demo department tuition rates
+  - Dedicated `/helpdesk/exams` featuring 75% class attendance rule, admit card protocols, and makeup exam window
+  - Dedicated `/helpdesk/contacts` with 09643-234234 central exchange, +8801322917670 query cell lines, and official web portals
 - [ ] **Phase 8: AI Campus Assistant (Gemini RAG Chatbot)**
 - [ ] **Phase 9: Academic Resource Hub & Moderation**
 - [ ] **Phase 10: Lost & Found Claims & Complaint Box with Tracking**

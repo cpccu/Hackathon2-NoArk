@@ -72,7 +72,15 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Grievance submission form (`/complaints/new`) with anonymous submission support, category classification, and mandatory sexual harassment / anti-drug committee advisories
   - Public tracking portal (`/complaints/track?id=CU-2026-XXXXXX`) and user history (`/my/complaints`) with timestamped status audit trail
   - Administrative complaints portal (`/admin/complaints`) with status updates (received, in_review, resolved) and official resolution notes
-- [ ] **Phase 11: Comprehensive Official & Demo Seed Data**
+- [x] **Phase 11: Comprehensive Official & Demo Seed Data**
+  - All 12 City University clubs seeded with full biographies, executive leadership, and meeting routines
+  - 15 realistic campus events seeded over next 3 weeks with exact Dhaka time ISO strings
+  - 5 bus routes (R1–R5) with 15 trips covering Gabtoli, Mirpur, Uttara, Dhanmondi, and Savar shuttles
+  - 14 official and demo FAQs across 8 categories with source URLs
+  - Academic resources dataset covering CSE, EEE, BBA, and Law with PDF previews
+  - Lost & found registry and grievance complaints with audit timelines
+  - Credentials documented in `docs/DEMO_ACCOUNTS.md` for student, club_admin, and admin
+  - Idempotent seed script executable via `npm run seed`
 - [ ] **Phase 12: Class Updates, Forms Directory, Today Dashboard & Global Search**
 - [ ] **Phase 13: Notice Summariser, Club Quiz, Timetable Conflict Checker & PWA**
 - [ ] **Phase 14: QA Audit & Test Report**

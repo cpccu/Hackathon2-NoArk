@@ -22,7 +22,12 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Dark mode and light mode with WCAG AA compliance and accessible focus indicators
   - Global search dialog shortcut (`Ctrl+K` / `⌘K`) with instant categorized campus indexing
   - Uncompromising demo data labeling (`DemoBadge` & persistent `DataNotice`)
-- [ ] **Phase 3: Data Model, Security Rules, File Upload Pipeline**
+- [x] **Phase 3: Data Model, Security Rules, File Upload Pipeline**
+  - Full TypeScript data models for all collections: users, clubs, events, registrations, busRoutes, busTrips, faqs, resources, resourceVotes, lostFound, claims, complaints, updates, directory
+  - Cloud Firestore security rules with role boundaries (`student`, `club_admin`, `admin`) and complaint confidentiality
+  - Server-side file upload route `/api/upload` with MIME/size limits and Cloudinary CDN pipeline
+  - Accessible `FileUploader` drag-and-drop component with client-side validation
+  - Idempotent `scripts/seed.mjs` skeleton executable with `npm run seed`
 - [ ] **Phase 4: Club & Event Engine**
 - [ ] **Phase 5: Event Registration, Waitlist, QR Tickets & Scanner**
 - [ ] **Phase 6: Campus Bus Schedule & Next-Bus Countdown**

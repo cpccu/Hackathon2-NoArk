@@ -1,4 +1,5 @@
 import { Department, UserRole } from "./user";
+export type { Department, UserRole };
 
 export type RecordSource = "official" | "demo";
 

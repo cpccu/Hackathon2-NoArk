@@ -59,7 +59,12 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Rate limiting protection per IP/UID and friendly 429 quota fallback to closest FAQ entries
   - Automatic unanswered question logging to `unansweredQuestions` Firestore collection for administrative tracking
   - Full-screen `/assistant` chatbot page and global persistent floating chat widget (`FloatingChatWidget`) across the entire portal
-- [ ] **Phase 9: Academic Resource Hub & Moderation**
+- [x] **Phase 9: Academic Resource Hub & Moderation**
+  - Public repository (`/resources`) with department and type filtering, sorting (most upvoted vs newest), and instant course code indexing ("CSE 2101")
+  - Student upload form (`/resources/upload`) with drag-and-drop file uploader (PDF/DOCX/PPTX, max 10MB) and status gating (student = pending, admin = approved)
+  - Interactive resource viewer (`/resources/[id]`) with in-browser PDF display, download link, transaction-based 1-vote-per-user system, and on-demand Gemini AI summary generator (cached in Firestore)
+  - Student uploads dashboard (`/my/uploads`) with review status tracking and admin rejection reasons
+  - Administrator moderation console (`/admin/resources`) supporting instant approval, rejection with customizable reasons, and "Faculty Verified" toggling
 - [ ] **Phase 10: Lost & Found Claims & Complaint Box with Tracking**
 - [ ] **Phase 11: Comprehensive Official & Demo Seed Data**
 - [ ] **Phase 12: Class Updates, Forms Directory, Today Dashboard & Global Search**

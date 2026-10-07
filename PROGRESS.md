@@ -65,7 +65,13 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Interactive resource viewer (`/resources/[id]`) with in-browser PDF display, download link, transaction-based 1-vote-per-user system, and on-demand Gemini AI summary generator (cached in Firestore)
   - Student uploads dashboard (`/my/uploads`) with review status tracking and admin rejection reasons
   - Administrator moderation console (`/admin/resources`) supporting instant approval, rejection with customizable reasons, and "Faculty Verified" toggling
-- [ ] **Phase 10: Lost & Found Claims & Complaint Box with Tracking**
+- [x] **Phase 10: Lost & Found Claims & Complaint Box with Tracking**
+  - Lost & Found directory (`/lost-found`) with tabs (Lost, Found, Recently Returned), category/location filtering, and automated keyword match suggestions
+  - Found items post form (`/lost-found/new`) with optional verification questions guarding sensitive belongings
+  - Claim flow ("This is mine") requiring claimants to answer verification questions before contact details are exchanged
+  - Grievance submission form (`/complaints/new`) with anonymous submission support, category classification, and mandatory sexual harassment / anti-drug committee advisories
+  - Public tracking portal (`/complaints/track?id=CU-2026-XXXXXX`) and user history (`/my/complaints`) with timestamped status audit trail
+  - Administrative complaints portal (`/admin/complaints`) with status updates (received, in_review, resolved) and official resolution notes
 - [ ] **Phase 11: Comprehensive Official & Demo Seed Data**
 - [ ] **Phase 12: Class Updates, Forms Directory, Today Dashboard & Global Search**
 - [ ] **Phase 13: Notice Summariser, Club Quiz, Timetable Conflict Checker & PWA**

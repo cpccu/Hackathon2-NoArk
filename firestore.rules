@@ -1,0 +1,147 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function hasRole(role) {
+      return isAuthenticated() && getUserData().role == role;
+    }
+
+    function isAdmin() {
+      return hasRole('admin');
+    }
+
+    function isClubAdmin() {
+      return hasRole('club_admin') || isAdmin();
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      // Users can create their own doc on signup with role 'student'
+      allow create: if isOwner(userId) && request.resource.data.role == 'student';
+      // Users can update their profile but cannot change their own role or uid
+      allow update: if isOwner(userId) && request.resource.data.role == resource.data.role;
+      // Admin has full control
+      allow write: if isAdmin();
+    }
+
+    // Clubs collection
+    match /clubs/{clubId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Events collection
+    match /events/{eventId} {
+      allow read: if true;
+      allow create, update: if isClubAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Registrations collection
+    match /registrations/{regId} {
+      allow read: if isAuthenticated() && (resource.data.userId == request.auth.uid || isClubAdmin());
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAuthenticated() && (resource.data.userId == request.auth.uid || isClubAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // Bus routes and trips (public read, admin write)
+    match /busRoutes/{routeId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /busTrips/{tripId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Helpdesk FAQs
+    match /faqs/{faqId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Academic Resources
+    match /resources/{resourceId} {
+      // Anyone can read approved resources, uploader or admin can read pending/rejected
+      allow read: if resource.data.status == 'approved' || (isAuthenticated() && (resource.data.uploaderId == request.auth.uid || isAdmin()));
+      // Students can upload with pending status
+      allow create: if isAuthenticated() && (request.resource.data.uploaderId == request.auth.uid && (request.resource.data.status == 'pending' || isAdmin()));
+      // Only admin can approve/reject, uploader can edit description/title while pending
+      allow update: if isAdmin() || (isAuthenticated() && resource.data.uploaderId == request.auth.uid && resource.data.status == 'pending');
+      allow delete: if isAdmin() || (isAuthenticated() && resource.data.uploaderId == request.auth.uid);
+    }
+
+    // Resource upvotes
+    match /resourceVotes/{voteId} {
+      allow read: if isAuthenticated();
+      allow create, delete: if isAuthenticated() && request.auth.uid == voteId.split('_')[0];
+    }
+
+    // Lost and Found
+    match /lostFound/{itemId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      allow update, delete: if isAuthenticated() && (resource.data.createdBy == request.auth.uid || isAdmin());
+    }
+
+    // Claims for lost & found
+    match /claims/{claimId} {
+      allow read: if isAuthenticated() && (resource.data.claimantId == request.auth.uid || resource.data.posterId == request.auth.uid || isAdmin());
+      allow create: if isAuthenticated() && request.resource.data.claimantId == request.auth.uid;
+      allow update: if isAuthenticated() && (resource.data.posterId == request.auth.uid || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // Complaints box (private & confidential)
+    match /complaints/{complaintId} {
+      // Readable by admin, or by trackingId / creator
+      allow read: if isAdmin() || (isAuthenticated() && resource.data.userId == request.auth.uid);
+      allow create: if true; // Allows anonymous or authenticated submission
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // Updates / Notices / Directory
+    match /updates/{updateId} {
+      allow read: if true;
+      allow write: if isAdmin() || isClubAdmin();
+    }
+
+    match /directory/{directoryId} {
+      allow read: if true;
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin();
+    }
+
+    match /notices/{noticeId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /notifications/{notifId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow write: if isAdmin();
+    }
+
+    match /unansweredQuestions/{qId} {
+      allow read: if isAdmin();
+      allow create: if true; // chatbot logs questions
+      allow update, delete: if isAdmin();
+    }
+  }
+}

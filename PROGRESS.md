@@ -40,7 +40,13 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Automatic waitlisting with priority promotion upon cancellation
   - Personal student tickets hub (`/my/events`) featuring high-contrast QR passes, cancellation flow, and Dhaka time display
   - Organizer check-in scanner (`/events/[id]/checkin`) with camera viewfinder, manual token verification, duplicate scan detection, live metrics, and attendee CSV download
-- [ ] **Phase 6: Campus Bus Schedule & Next-Bus Countdown**
+- [x] **Phase 6: Campus Bus Schedule & Next-Bus Countdown**
+  - All 5 official/demo bus routes (R1 Gabtoli, R2 Mirpur-10, R3 Uttara, R4 Dhanmondi, R5 Savar/Nabinagar) with ordered pickup stops and bilingual labels
+  - Real-time next-bus countdown engine strictly synchronized with Asia/Dhaka standard time and day-of-week logic
+  - Automatic fallback to "First bus tomorrow" when all shuttles conclude for today
+  - Instant stop/area search ("Mirpur", "Uttara", "Gabtoli", "Birulia") and direction filtering ("To Campus" / "From Campus")
+  - Favourite route bookmarking with persistent client-side storage
+  - Prominent hackathon demo data badge and transport office hotline (09643-234234)
 - [ ] **Phase 7: Smart Helpdesk (FAQs, Admission, Fees, Exams, Contacts)**
 - [ ] **Phase 8: AI Campus Assistant (Gemini RAG Chatbot)**
 - [ ] **Phase 9: Academic Resource Hub & Moderation**

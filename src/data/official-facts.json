@@ -1,0 +1,64 @@
+{
+  "university": {
+    "name": "City University",
+    "name_bn": "সিটি ইউনিভার্সিটি",
+    "established": 2002,
+    "founder": "Alhaj Mockbul Hossain",
+    "status": "UGC-approved private university under Private University Act 2010",
+    "campus": "Permanent Campus at Khagan, Birulia, Savar, Dhaka-1340, Bangladesh",
+    "distance": "Approximately 10 km from Gabtoli Inter-District Terminal",
+    "mediumOfInstruction": "English with Bangla support",
+    "telephone": "09643-234234",
+    "mobileHelplines": ["+8801322917670", "+8801322917671", "+8801322917672", "+8801322917673"],
+    "officialWebsite": "https://cityuniversity.ac.bd",
+    "admissionPortal": "https://admission.cityuniversity.ac.bd/",
+    "iemsPortal": "https://iems.cityuniversity.ac.bd/",
+    "studentPortal": "https://cityuniversity.orbund.com/einstein-freshair/index.jsp",
+    "libraryPortal": "https://library.cityuniversity.ac.bd/",
+    "webmail": "https://outlook.office.com/"
+  },
+  "faculties": [
+    {
+      "name": "Faculty of Science & Engineering",
+      "departments": ["CSE", "EEE", "Mechanical Engineering", "Civil Engineering", "Textile Engineering", "Pharmacy", "Public Health", "Science & Humanities"]
+    },
+    {
+      "name": "Faculty of Business & Economics",
+      "departments": ["Business Administration (BBA, MBA, EMBA)"]
+    },
+    {
+      "name": "Faculty of Arts & Social Sciences",
+      "departments": ["English", "Law"]
+    },
+    {
+      "name": "Faculty of Agriculture",
+      "departments": ["Agriculture"]
+    }
+  ],
+  "undergraduateEligibility": {
+    "standard": "Minimum GPA 2.50 in SSC and HSC separately, with total combined GPA 6.00",
+    "artsAndDesign": "Minimum GPA 2.00 in SSC and HSC for Music, Fashion Design, Fine Arts, and Graphic Design",
+    "graduate": "Undergraduate degree with at least 2.00 CGPA from UGC-approved university"
+  },
+  "waiverPolicy": {
+    "goldenGpa5Both": "100% waiver (requires CGPA 3.60 to retain)",
+    "gpa5Both": "75% waiver (requires CGPA 3.50 to retain)",
+    "gpa900to999": "30% waiver (requires CGPA 3.20 to retain)",
+    "gpa800to899": "25% waiver (requires CGPA 3.00 to retain)",
+    "gpa700to799": "20% waiver (requires CGPA 3.00 to retain)",
+    "gpa600to699": "15% waiver (requires CGPA 3.00 to retain)",
+    "gpa500to599": "10% waiver (requires CGPA 3.00 to retain)",
+    "specialQuotas": "Up to 50% waiver for siblings, husband-wife, Quran Hafiz, freedom fighters' children/grandchildren, physically challenged students, and sports quota. Only highest waiver applies."
+  },
+  "examRegulations": {
+    "attendance": "Mandatory 75% attendance in each registered course to be eligible for Midterm and Final examinations",
+    "documents": "Valid Admit Card and physical Student ID Card required in exam hall",
+    "devices": "Mobile phones, smart watches, and unauthorized electronic devices strictly prohibited",
+    "makeupWindow": "Application with certified doctor / medical papers within 7 working days"
+  },
+  "committees": {
+    "sexualHarassmentPrevention": "Standing Sexual Harassment Prevention Committee formed 22 September 2026",
+    "antiDrugVigilance": "Anti-Drug Committee formed 14 September 2026"
+  },
+  "transportNotice": "Dedicated bus shuttles connect Gabtoli, Mirpur-10, Uttara, Dhanmondi, and Savar. Operating schedules shown on CampusOS are illustrative demo data for the hackathon."
+}

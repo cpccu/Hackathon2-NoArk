@@ -1,6 +1,7 @@
 import React from "react";
 import { AppHeader } from "./AppHeader";
 import { AppFooter } from "./AppFooter";
+import { FloatingChatWidget } from "@/components/chat/FloatingChatWidget";
 
 export interface AppShellProps {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ export const AppShell: React.FC<AppShellProps> = ({ children, hideFooter = false
         {children}
       </main>
       {!hideFooter && <AppFooter />}
+      <FloatingChatWidget />
     </div>
   );
 };

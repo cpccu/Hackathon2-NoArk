@@ -53,7 +53,12 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Dedicated `/helpdesk/fees` with official 100% merit waiver policy matrix, retention CGPA tiers, and demo department tuition rates
   - Dedicated `/helpdesk/exams` featuring 75% class attendance rule, admit card protocols, and makeup exam window
   - Dedicated `/helpdesk/contacts` with 09643-234234 central exchange, +8801322917670 query cell lines, and official web portals
-- [ ] **Phase 8: AI Campus Assistant (Gemini RAG Chatbot)**
+- [x] **Phase 8: AI Campus Assistant (Gemini RAG Chatbot)**
+  - Server route `/api/chat` grounded on `src/data/official-facts.json`, FAQs, bus routes, and campus events
+  - Zero-hallucination policy strictly refusing out-of-scope questions with standard helpline referral (09643-234234)
+  - Rate limiting protection per IP/UID and friendly 429 quota fallback to closest FAQ entries
+  - Automatic unanswered question logging to `unansweredQuestions` Firestore collection for administrative tracking
+  - Full-screen `/assistant` chatbot page and global persistent floating chat widget (`FloatingChatWidget`) across the entire portal
 - [ ] **Phase 9: Academic Resource Hub & Moderation**
 - [ ] **Phase 10: Lost & Found Claims & Complaint Box with Tracking**
 - [ ] **Phase 11: Comprehensive Official & Demo Seed Data**

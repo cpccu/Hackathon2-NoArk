@@ -15,7 +15,13 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Split-screen branded authentication pages (Sign-in, Sign-up, Password Reset)
   - Role management (`student`, `club_admin`, `admin`) with default `student`
   - Protected routes and email verification guard
-- [ ] **Phase 2: Design System, Shell & Bilingual Support (EN/BN)**
+- [x] **Phase 2: Design System, Shell & Bilingual Support (EN/BN)**
+  - Editorial academic UI components: Button, Input, Select, Textarea, Card, Badge, DemoBadge, Tabs, Modal, Toast, EmptyState, ErrorState, Skeleton, Pagination, PageHeader, DataNotice
+  - App shell with responsive header, drawer, and university footer (official address, 09643-234234, official links)
+  - Bilingual i18n support (English & Bangla) with real-time toggle and localStorage/profile persistence
+  - Dark mode and light mode with WCAG AA compliance and accessible focus indicators
+  - Global search dialog shortcut (`Ctrl+K` / `⌘K`) with instant categorized campus indexing
+  - Uncompromising demo data labeling (`DemoBadge` & persistent `DataNotice`)
 - [ ] **Phase 3: Data Model, Security Rules, File Upload Pipeline**
 - [ ] **Phase 4: Club & Event Engine**
 - [ ] **Phase 5: Event Registration, Waitlist, QR Tickets & Scanner**

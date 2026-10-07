@@ -3,6 +3,8 @@ import { Inter, Merriweather, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { ToastProvider } from "@/context/ToastContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,13 +47,17 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <AuthProvider>
-          <LanguageProvider>
-            <div id="main-content" className="min-h-screen flex flex-col">
-              {children}
-            </div>
-          </LanguageProvider>
-        </AuthProvider>
+        <ThemeProvider>
+          <ToastProvider>
+            <AuthProvider>
+              <LanguageProvider>
+                <div id="main-content" className="min-h-screen flex flex-col">
+                  {children}
+                </div>
+              </LanguageProvider>
+            </AuthProvider>
+          </ToastProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

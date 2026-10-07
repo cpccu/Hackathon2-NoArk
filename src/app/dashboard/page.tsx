@@ -3,123 +3,190 @@
 import React from "react";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
+import { useLanguage } from "@/context/LanguageContext";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
-import { LogOut, User as UserIcon, Shield, Mail, Calendar, Bus, FileText, Sparkles } from "lucide-react";
+import { AppShell } from "@/components/shell/AppShell";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { Card } from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import { DataNotice } from "@/components/ui/DataNotice";
+import {
+  Calendar,
+  Bus,
+  FileText,
+  HelpCircle,
+  AlertCircle,
+  Bell,
+  ArrowRight,
+  Sparkles,
+  Clock,
+} from "lucide-react";
 
 export default function DashboardPage() {
-  const { user, profile, role, logout } = useAuth();
+  const { user, profile, role } = useAuth();
+  const { t } = useLanguage();
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen bg-slate-50 flex flex-col">
-        {/* Navigation bar */}
-        <header className="bg-campus-navy-900 text-white border-b border-campus-navy-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <div className="h-8 w-8 rounded bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-sm">
-                CU
-              </div>
-              <span className="font-serif font-bold text-slate-100">CampusOS</span>
-            </div>
+      <AppShell>
+        <PageHeader
+          title={`Welcome back, ${profile?.name || "Student"}`}
+          subtitle={`Department of ${profile?.department || "CSE"} • Batch ${profile?.batch || "50th"}${
+            profile?.studentId ? ` • Student ID: ${profile.studentId}` : ""
+          }`}
+          badge={
+            <Badge variant="gold" size="md">
+              {role}
+            </Badge>
+          }
+        />
 
-            <div className="flex items-center space-x-4 text-xs">
-              <div className="hidden sm:flex items-center gap-2 bg-campus-navy-800 px-3 py-1.5 rounded-full border border-campus-navy-700">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span className="text-slate-300 font-medium">{profile?.name || user?.email}</span>
-                <span className="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-campus-gold-500/20 text-campus-gold-400 border border-campus-gold-500/30">
-                  {role}
-                </span>
-              </div>
+        <DataNotice
+          className="mb-8"
+          message="CampusOS is synchronized to Asia/Dhaka time. Notice and schedule changes reflect official department postings."
+        />
 
-              <button
-                onClick={() => logout()}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-campus-navy-800 hover:bg-campus-navy-700 text-slate-200 transition"
-              >
-                <LogOut className="w-3.5 h-3.5" />
-                <span>Log Out</span>
-              </button>
-            </div>
-          </div>
-        </header>
-
-        {/* Dashboard Body */}
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
-          {/* Welcome Card */}
-          <div className="bg-white rounded-lg border border-slate-200 p-6 sm:p-8 shadow-sm mb-8">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Quick Hub Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <Link href="/events" className="group">
+            <Card variant="interactive" className="h-full flex flex-col justify-between">
               <div>
-                <span className="text-xs uppercase tracking-widest text-campus-gold-600 font-bold">
-                  Active Session
-                </span>
-                <h1 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mt-1">
-                  Welcome back, {profile?.name || "Student"}
-                </h1>
-                <p className="mt-1 text-sm text-slate-600">
-                  Department of {profile?.department || "CSE"} • Batch {profile?.batch || "50th"}
-                  {profile?.studentId && ` • ID: ${profile.studentId}`}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2.5 rounded-lg bg-campus-navy-100 dark:bg-campus-navy-900 text-campus-navy-800 dark:text-campus-gold-400">
+                    <Calendar className="w-5 h-5" />
+                  </div>
+                  <Badge variant="default">Events</Badge>
+                </div>
+                <h2 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-campus-navy-700 dark:group-hover:text-campus-gold-400 transition">
+                  {t.events.title}
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Browse verified club workshops, contests, and register with instant QR pass issuance.
                 </p>
               </div>
-
-              <div className="flex items-center gap-2">
-                <span className="px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider bg-campus-navy-50 text-campus-navy-800 border border-campus-navy-200">
-                  Role: {role}
-                </span>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-campus-navy-700 dark:text-campus-gold-400 font-semibold">
+                <span>Explore Events</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
-            </div>
-          </div>
+            </Card>
+          </Link>
 
-          {/* Quick Access Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded bg-campus-navy-50 text-campus-navy-700">
-                  <Calendar className="w-5 h-5" />
+          <Link href="/bus" className="group">
+            <Card variant="interactive" className="h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2.5 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300">
+                    <Bus className="w-5 h-5" />
+                  </div>
+                  <Badge variant="warning">Bus Schedule</Badge>
                 </div>
-                <h2 className="font-serif font-bold text-slate-900">Events & Tickets</h2>
+                <h2 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-campus-navy-700 dark:group-hover:text-campus-gold-400 transition">
+                  {t.bus.title}
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Permanent campus shuttle schedules with live countdown to your next departure.
+                </p>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Browse upcoming university club workshops, hackathons, and seminars.
-              </p>
-              <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
-                <span className="text-slate-500">Phase 4 module</span>
-                <span className="text-campus-gold-600 font-semibold">Configured</span>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-blue-700 dark:text-blue-400 font-semibold">
+                <span>View Timetable</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
-            </div>
+            </Card>
+          </Link>
 
-            <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded bg-campus-navy-50 text-campus-navy-700">
-                  <Bus className="w-5 h-5" />
+          <Link href="/resources" className="group">
+            <Card variant="interactive" className="h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2.5 rounded-lg bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <Badge variant="success">Resource Hub</Badge>
                 </div>
-                <h2 className="font-serif font-bold text-slate-900">Campus Shuttle</h2>
+                <h2 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-campus-navy-700 dark:group-hover:text-campus-gold-400 transition">
+                  {t.resources.title}
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Search lecture notes, question archives, and lab manuals organized by department and course code.
+                </p>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Check schedule for Gabtoli, Mirpur, Uttara & Dhanmondi with countdown.
-              </p>
-              <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
-                <span className="text-slate-500">Phase 6 module</span>
-                <span className="text-campus-gold-600 font-semibold">Configured</span>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-emerald-700 dark:text-emerald-400 font-semibold">
+                <span>Access Repository</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
-            </div>
+            </Card>
+          </Link>
 
-            <div className="bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded bg-campus-navy-50 text-campus-navy-700">
-                  <FileText className="w-5 h-5" />
+          <Link href="/helpdesk" className="group">
+            <Card variant="interactive" className="h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2.5 rounded-lg bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300">
+                    <HelpCircle className="w-5 h-5" />
+                  </div>
+                  <Badge variant="default">Helpdesk</Badge>
                 </div>
-                <h2 className="font-serif font-bold text-slate-900">Academic Resources</h2>
+                <h2 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-campus-navy-700 dark:group-hover:text-campus-gold-400 transition">
+                  {t.helpdesk.title}
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Authoritative guides on tuition waivers, semester fees, exams, and AI campus advisor.
+                </p>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Course notes, exam question archives, and lab manuals organized by semester.
-              </p>
-              <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
-                <span className="text-slate-500">Phase 9 module</span>
-                <span className="text-campus-gold-600 font-semibold">Configured</span>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-purple-700 dark:text-purple-400 font-semibold">
+                <span>Open Helpdesk</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
-            </div>
-          </div>
-        </main>
-      </div>
+            </Card>
+          </Link>
+
+          <Link href="/lost-found" className="group">
+            <Card variant="interactive" className="h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2.5 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300">
+                    <AlertCircle className="w-5 h-5" />
+                  </div>
+                  <Badge variant="warning">Lost & Found</Badge>
+                </div>
+                <h2 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-campus-navy-700 dark:group-hover:text-campus-gold-400 transition">
+                  Lost & Found Center
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Report missing items or claim discovered belongings using security verification questions.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-amber-700 dark:text-amber-400 font-semibold">
+                <span>Check Registry</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Card>
+          </Link>
+
+          <Link href="/complaints" className="group">
+            <Card variant="interactive" className="h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="p-2.5 rounded-lg bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300">
+                    <Bell className="w-5 h-5" />
+                  </div>
+                  <Badge variant="danger">Grievance</Badge>
+                </div>
+                <h2 className="font-serif text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-campus-navy-700 dark:group-hover:text-campus-gold-400 transition">
+                  Confidential Complaint Box
+                </h2>
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Submit confidential feedback with tracking ID (CU-2026-XXXXXX) and status timeline.
+                </p>
+              </div>
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-rose-700 dark:text-rose-400 font-semibold">
+                <span>Submit Grievance</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Card>
+          </Link>
+        </div>
+      </AppShell>
     </ProtectedRoute>
   );
 }

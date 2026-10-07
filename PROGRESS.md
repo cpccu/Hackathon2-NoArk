@@ -28,7 +28,13 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Server-side file upload route `/api/upload` with MIME/size limits and Cloudinary CDN pipeline
   - Accessible `FileUploader` drag-and-drop component with client-side validation
   - Idempotent `scripts/seed.mjs` skeleton executable with `npm run seed`
-- [ ] **Phase 4: Club & Event Engine**
+- [x] **Phase 4: Club & Event Engine**
+  - Unified event feed (`/events`) across all 12 City University clubs with Upcoming and Past tabs
+  - Multi-parameter filtering: by club, category, date range (Today, This Week, This Month), and instant search
+  - "This week on campus" highlight strip computed using Asia/Dhaka standard time
+  - Dynamic event detail page (`/events/[id]`) with live seat capacity bar, calendar export (Google Calendar + `.ics` download), and organizer links
+  - Event publishing and editing workflows (`/events/new` and `/events/[id]/edit`) protected by role checks (`club_admin`, `admin`)
+  - Full Clubs directory (`/clubs`) and detailed club profiles (`/clubs/[id]`) with leadership and categorized listings
 - [ ] **Phase 5: Event Registration, Waitlist, QR Tickets & Scanner**
 - [ ] **Phase 6: Campus Bus Schedule & Next-Bus Countdown**
 - [ ] **Phase 7: Smart Helpdesk (FAQs, Admission, Fees, Exams, Contacts)**

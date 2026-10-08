@@ -98,6 +98,8 @@ function retrieveRelevantChunks(query: string): { chunk: string; source: string;
   return results.slice(0, 6);
 }
 
+export const maxDuration = 30;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();

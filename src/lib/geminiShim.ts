@@ -18,21 +18,29 @@ export class GoogleGenerativeAI {
     const apiKey = this.apiKey;
     return {
       async generateContent(input: any) {
-        const model = process.env.GEMINI_MODEL || MODEL_DEFAULT;
-        const res = await fetch("https://generativelanguage.googleapis.com/v1beta/interactions", {
-          method: "POST",
-          headers: { "x-goog-api-key": apiKey, "Content-Type": "application/json" },
-          body: JSON.stringify({ model, input: toPrompt(input) }),
-          signal: AbortSignal.timeout(20000),
-        });
-        if (!res.ok) throw new Error(`Gemini ${res.status}: ${(await res.text()).slice(0, 200)}`);
-        const data = await res.json();
-        const steps: any[] = data.steps ?? [];
-        const out = [...steps].reverse().find((s) => s.type === "model_output");
-        let text: string = (out?.content ?? []).map((c: any) => c.text ?? "").join("").trim();
-        if (!text) throw new Error("Gemini returned no text");
-        if (text.startsWith("```")) text = text.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/, "").trim();
-        return { response: { text: () => text } };
+        const models = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash"];
+        let lastErr: any = null;
+        for (const model of models) {
+          try {
+            const res = await fetch("https://generativelanguage.googleapis.com/v1beta/interactions", {
+              method: "POST",
+              headers: { "x-goog-api-key": apiKey, "Content-Type": "application/json" },
+              body: JSON.stringify({ model, input: toPrompt(input) }),
+              signal: AbortSignal.timeout(9000),
+            });
+            if (!res.ok) throw new Error(`Gemini ${res.status} (${model}): ${(await res.text()).slice(0, 120)}`);
+            const data = await res.json();
+            const steps: any[] = data.steps ?? [];
+            const out = [...steps].reverse().find((st) => st.type === "model_output");
+            let text: string = (out?.content ?? []).map((c: any) => c.text ?? "").join("").trim();
+            if (!text) throw new Error(`Gemini returned no text (${model})`);
+            if (text.startsWith("```")) text = text.replace(/^```(?:json)?\s*/i, "").replace(/```\s*$/, "").trim();
+            return { response: { text: () => text } };
+          } catch (e) {
+            lastErr = e;
+          }
+        }
+        throw lastErr ?? new Error("Gemini failed");
       },
     };
   }

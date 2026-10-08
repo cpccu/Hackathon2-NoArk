@@ -81,12 +81,15 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Lost & found registry and grievance complaints with audit timelines
   - Credentials documented in `docs/DEMO_ACCOUNTS.md` for student, club_admin, and admin
   - Idempotent seed script executable via `npm run seed`
+- [x] **Phase 17: Final Documentation, Judges Portal & Production Deployment**
+  - Fully articulated `README.md` with friction mapping, architecture mermaid diagram, free tier rules, and local setup
+  - `/judges` portal with 2-minute walkthrough path, criteria mapping (100 marks), and role credentials
+  - `docs/DEMO_ACCOUNTS.md`, `docs/ARCHITECTURE.md`, `docs/DATA_SOURCES.md`, `docs/FREE_TIER.md`, `docs/TEST_REPORT.md`, `docs/LIGHTHOUSE.md`, and `CONTRIBUTING.md`
 - [ ] **Phase 12: Class Updates, Forms Directory, Today Dashboard & Global Search**
 - [ ] **Phase 13: Notice Summariser, Club Quiz, Timetable Conflict Checker & PWA**
 - [ ] **Phase 14: QA Audit & Test Report**
 - [ ] **Phase 15: Free-Tier Quota & Security Audit**
 - [ ] **Phase 16: UI/UX Polish, Accessibility & Dark Mode**
-- [ ] **Phase 17: Final Documentation, Judges Portal & Production Deployment**
 
 ---
 

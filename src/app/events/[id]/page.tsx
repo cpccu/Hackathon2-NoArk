@@ -15,6 +15,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useToast } from "@/context/ToastContext";
 import { CampusEvent } from "@/types/models";
 import { fetchEventById, getEventStatus } from "@/lib/events";
+import { getUserRegistrations } from "@/lib/registrations";
 import { formatDhakaDateTime, formatDhakaTime } from "@/lib/date";
 import {
   Calendar,
@@ -41,6 +42,18 @@ export default function EventDetailPage() {
 
   const [event, setEvent] = useState<CampusEvent | null>(null);
   const [loading, setLoading] = useState(true);
+  const [alreadyRegistered, setAlreadyRegistered] = useState(false);
+
+  useEffect(() => {
+    if (!user) return;
+    getUserRegistrations(user.uid)
+      .then((regs) =>
+        setAlreadyRegistered(
+          regs.some((r: any) => r.eventId === eventId && r.status !== "cancelled")
+        )
+      )
+      .catch(() => {});
+  }, [user, eventId]);
 
   useEffect(() => {
     async function load() {
@@ -258,14 +271,13 @@ export default function EventDetailPage() {
               </div>
 
               {/* Registration CTA button (leads to registration in Phase 5) */}
-              <Link href={`/events/${event.id}/register`} className="block">
+              <Link href={alreadyRegistered ? "/my/events" : `/events/${event.id}/register`} className="block">
                 <Button
                   variant={seatsLeft > 0 ? "gold" : "secondary"}
                   className="w-full"
                   disabled={status === "past" || status === "closed"}
                 >
-                  {status === "past"
-                    ? "Event Concluded"
+                  {alreadyRegistered ? "✓ Registered – View Ticket" : status === "past" ? "Event Concluded"
                     : status === "closed"
                     ? "Registration Closed"
                     : seatsLeft > 0

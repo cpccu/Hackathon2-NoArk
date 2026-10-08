@@ -68,7 +68,7 @@ export default function NewComplaintPage() {
 
           <PageHeader
             title="Submit Confidential Grievance / Complaint"
-            subtitle="CampusOS complaints box assigns a unique tracking ID (CU-2026-XXXXXX) for end-to-end resolution tracking."
+            subtitle="Campus-OS complaints box assigns a unique tracking ID (CU-2026-XXXXXX) for end-to-end resolution tracking."
           />
 
           {/* Mandatory Committee Notice per Section 7.4 */}
@@ -79,7 +79,7 @@ export default function NewComplaintPage() {
                 Notice Regarding Safety & Harassment Concerns
               </strong>
               <p className="leading-relaxed">
-                While CampusOS routes submissions directly to administrative handlers, sensitive matters regarding physical safety, harassment, or drug concerns must also be reported directly to the official standing university committees: <strong>Sexual Harassment Prevention Committee</strong> or <strong>Anti-Drug Vigilance Committee</strong> via the Proctorial Office (Room 108, Admin Building or 09643-234234).
+                While Campus-OS routes submissions directly to administrative handlers, sensitive matters regarding physical safety, harassment, or drug concerns must also be reported directly to the official standing university committees: <strong>Sexual Harassment Prevention Committee</strong> or <strong>Anti-Drug Vigilance Committee</strong> via the Proctorial Office (Room 108, Admin Building or 09643-234234).
               </p>
             </div>
           </div>

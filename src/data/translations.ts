@@ -22,7 +22,7 @@ export const translations = {
     // Common UI
     common: {
       campusName: "City University",
-      portalSubtitle: "CampusOS Portal",
+      portalSubtitle: "Campus-OS Portal",
       loading: "Loading...",
       empty: "No records found.",
       error: "Something went wrong. Please try again.",

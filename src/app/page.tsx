@@ -29,7 +29,7 @@ export default function HomePage() {
             <div>
               <span className="text-lg font-bold tracking-tight text-white block">City University</span>
               <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">
-                CampusOS Portal
+                Campus-OS Portal
               </span>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
                   href="/login"
                   className="px-6 py-3 rounded-md border border-slate-600 bg-campus-navy-800/80 hover:bg-campus-navy-800 text-slate-200 text-sm font-medium transition"
                 >
-                  Sign In to CampusOS
+                  Sign In to Campus-OS
                 </Link>
               </>
             )}
@@ -223,13 +223,13 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-slate-200 uppercase tracking-wider mb-3">CampusOS System</h4>
+            <h4 className="font-semibold text-slate-200 uppercase tracking-wider mb-3">Campus-OS System</h4>
             <p className="text-slate-400 leading-relaxed">
               Developed for CPCCU AI-Powered Web App Hackathon 2026.
               Fully compliant with zero-cost free-tier architecture and Asia/Dhaka timezone.
             </p>
             <p className="mt-3 text-campus-gold-400 font-medium">
-              &copy; {new Date().getFullYear()} City University CampusOS. MIT Licensed.
+              &copy; {new Date().getFullYear()} City University Campus-OS. MIT Licensed.
             </p>
           </div>
         </div>

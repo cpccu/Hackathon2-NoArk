@@ -55,7 +55,7 @@ export const QRCodeDisplay: React.FC<QRCodeDisplayProps> = ({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={dataUrl}
-        alt={`CampusOS QR Ticket: ${value}`}
+        alt={`Campus-OS QR Ticket: ${value}`}
         width={size}
         height={size}
         className="rounded"

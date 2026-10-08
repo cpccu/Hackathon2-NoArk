@@ -102,7 +102,7 @@ export default function LoginPage() {
             <div className="rounded-lg bg-white p-2 shadow"><img src="/logo.png" alt="City University" className="h-20 w-auto" /></div>
             <div>
               
-              <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">CampusOS Portal</span>
+              <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">Campus-OS Portal</span>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ export default function LoginPage() {
               Creating a culture of excellence.
             </h1>
             <p className="mt-4 text-slate-300 text-sm lg:text-base leading-relaxed">
-              CampusOS is the unified operating system connecting students, faculty, clubs, and administration at City University.
+              Campus-OS is the unified operating system connecting students, faculty, clubs, and administration at City University.
             </p>
 
             <div className="mt-8 space-y-3.5 border-t border-campus-navy-700/60 pt-6">
@@ -151,7 +151,7 @@ export default function LoginPage() {
       <div className="md:w-1/2 flex items-center justify-center p-6 sm:p-12 lg:p-16">
         <div className="w-full max-w-md">
           <div className="mb-8">
-            <h2 className="font-serif text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Sign In to CampusOS</h2>
+            <h2 className="font-serif text-2xl lg:text-3xl font-bold text-slate-900 tracking-tight">Sign In to Campus-OS</h2>
             <p className="mt-2 text-sm text-slate-600">
               Welcome back. Enter your credentials or use your student Google account.
             </p>
@@ -307,7 +307,7 @@ export default function LoginPage() {
 
           <div className="mt-8 pt-6 border-t border-slate-200 text-center">
             <p className="text-xs text-slate-600">
-              New to City University CampusOS?{" "}
+              New to City University Campus-OS?{" "}
               <Link href="/register" className="font-semibold text-campus-navy-800 hover:underline">
                 Create student account
               </Link>

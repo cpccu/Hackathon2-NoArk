@@ -107,10 +107,10 @@ export default function NoticeSummariserPage() {
     const icsContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//City University//CampusOS Notice Summarizer//EN",
+      "PRODID:-//City University//Campus-OS Notice Summarizer//EN",
       "BEGIN:VEVENT",
       `SUMMARY:${item.label}`,
-      `DESCRIPTION:Important deadline extracted by CampusOS Notice Summarizer. Verify with official notice.`,
+      `DESCRIPTION:Important deadline extracted by Campus-OS Notice Summarizer. Verify with official notice.`,
       `DTSTART:${formatIcsTime(startDate)}`,
       `DTEND:${formatIcsTime(endDate)}`,
       "LOCATION:City University, Savar, Dhaka",

@@ -27,7 +27,7 @@ const notoSansBengali = Noto_Sans_Bengali({
 });
 
 export const metadata: Metadata = {
-  title: "CampusOS – City University",
+  title: "Campus-OS – City University",
   description: "Unified web portal and campus life operating system for City University (Khagan, Birulia, Savar).",
   icons: {
     icon: "/favicon.ico",

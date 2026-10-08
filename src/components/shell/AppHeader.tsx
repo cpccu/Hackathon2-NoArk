@@ -69,7 +69,7 @@ export const AppHeader: React.FC = () => {
                 <div>
                   
                   <span className="text-[10px] uppercase tracking-widest text-campus-gold-400 font-semibold block leading-tight">
-                    CampusOS
+                    Campus-OS
                   </span>
                 </div>
               </Link>

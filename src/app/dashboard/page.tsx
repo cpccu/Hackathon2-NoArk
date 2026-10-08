@@ -171,7 +171,7 @@ export default function DashboardPage() {
 
         <DataNotice
           className="mb-8"
-          message="CampusOS is synchronized to Asia/Dhaka time. Notice and schedule changes reflect official department postings."
+          message="Campus-OS is synchronized to Asia/Dhaka time. Notice and schedule changes reflect official department postings."
         />
 
         {role === "admin" && (

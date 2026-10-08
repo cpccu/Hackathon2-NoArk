@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    const prompt = `You are CampusOS academic summarizer for City University, Bangladesh.
+    const prompt = `You are Campus-OS academic summarizer for City University, Bangladesh.
 Generate a concise 2-sentence summary in English and natural Bangla for this university course resource.
 Return JSON with keys "en" and "bn".
 

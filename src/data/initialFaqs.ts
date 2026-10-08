@@ -178,7 +178,7 @@ export const INITIAL_FAQS: FAQ[] = [
     question_en: "What are the university policies regarding harassment and disciplinary matters?",
     question_bn: "যৌন হয়রানি প্রতিরোধ ও ক্যাম্পাস শৃঙ্খলা বিষয়ে বিশ্ববিদ্যালয়ের নীতিমালা কী?",
     answer_en:
-      "City University maintains zero tolerance for harassment, bullying, and illicit substances. The university constituted a standing Sexual Harassment Prevention Committee (formed 22 Sep 2026) and an Anti-Drug Vigilance Committee (formed 14 Sep 2026). In addition to filing online complaints through CampusOS, sensitive matters should also be reported directly to the Proctorial Office or relevant committees.",
+      "City University maintains zero tolerance for harassment, bullying, and illicit substances. The university constituted a standing Sexual Harassment Prevention Committee (formed 22 Sep 2026) and an Anti-Drug Vigilance Committee (formed 14 Sep 2026). In addition to filing online complaints through Campus-OS, sensitive matters should also be reported directly to the Proctorial Office or relevant committees.",
     answer_bn:
       "ক্যাম্পাসে যেকোনো ধরনের হয়রানি ও মাদক সম্পূর্ণ নিষিদ্ধ। এ বিষয়ে স্থায়ী যৌন হয়রানি প্রতিরোধ কমিটি এবং মাদক বিরোধী কমিটি কার্যকর রয়েছে। শিক্ষার্থীরা প্রক্টর অফিসে বা ক্যাম্পাসের অনলাইন কমপ্লেইন বক্সে অভিযোগ জানাতে পারেন।",
     sourceUrl: "https://cityuniversity.ac.bd/faq",

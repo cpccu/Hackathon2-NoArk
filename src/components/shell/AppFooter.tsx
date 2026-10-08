@@ -78,7 +78,7 @@ export const AppFooter: React.FC = () => {
         {/* Quick Portal Navigation */}
         <div>
           <h4 className="font-semibold text-slate-200 uppercase tracking-wider mb-3">
-            CampusOS Quick Access
+            Campus-OS Quick Access
           </h4>
           <ul className="space-y-2 text-slate-400">
             <li>
@@ -117,7 +117,7 @@ export const AppFooter: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-campus-navy-900 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
         <div>
-          &copy; {new Date().getFullYear()} City University CampusOS. Open Source MIT License.
+          &copy; {new Date().getFullYear()} City University Campus-OS. Open Source MIT License.
         </div>
         <div>
           CPCCU Hackathon 2026 • Savar, Dhaka, Bangladesh

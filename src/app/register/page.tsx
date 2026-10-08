@@ -93,7 +93,7 @@ export default function RegisterPage() {
             <div className="rounded-lg bg-white p-2 shadow"><img src="/logo.png" alt="City University" className="h-14 w-auto" /></div>
             <div>
               <span className="text-xl font-bold tracking-tight text-white block">City University</span>
-              <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">CampusOS Registration</span>
+              <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">Campus-OS Registration</span>
             </div>
           </div>
 

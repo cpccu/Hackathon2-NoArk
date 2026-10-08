@@ -176,7 +176,7 @@ export async function POST(req: NextRequest) {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-      const systemPrompt = `You are CampusOS AI Assistant for City University, Bangladesh (permanent campus at Khagan, Birulia, Savar).
+      const systemPrompt = `You are Campus-OS AI Assistant for City University, Bangladesh (permanent campus at Khagan, Birulia, Savar).
 STRICT RULES:
 1. Answer ONLY from the provided CONTEXT below. Do NOT hallucinate or guess.
 2. If the answer is NOT present in the context, you MUST reply: "I don't have that information. Please contact the university office at 09643-234234."

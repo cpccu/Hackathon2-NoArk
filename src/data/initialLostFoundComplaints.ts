@@ -78,7 +78,7 @@ export const INITIAL_COMPLAINTS: Complaint[] = [
     timeline: [
       {
         status: "received",
-        note: "Complaint submitted through CampusOS portal and assigned tracking ID CU-2026-784912.",
+        note: "Complaint submitted through Campus-OS portal and assigned tracking ID CU-2026-784912.",
         timestamp: "2026-10-04T09:15:00+06:00",
         isPublic: true,
       },

@@ -163,7 +163,7 @@ export default function ClassUpdatesPage() {
     const icsContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//City University//CampusOS Class Updates//EN",
+      "PRODID:-//City University//Campus-OS Class Updates//EN",
       "BEGIN:VEVENT",
       `SUMMARY:${title}`,
       `DESCRIPTION:${body.replace(/\n/g, "\\n")}`,

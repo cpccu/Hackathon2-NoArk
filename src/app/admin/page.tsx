@@ -76,7 +76,7 @@ export default function AdminDashboardPage() {
     <ProtectedRoute allowedRoles={["admin"]}>
       <AppShell>
         <PageHeader
-          title="CampusOS System Administration"
+          title="Campus-OS System Administration"
           subtitle="Real-time institutional oversight, resource moderation queues, grievance workflows, and AI log analysis."
           badge={
             <Badge variant="gold" size="md">

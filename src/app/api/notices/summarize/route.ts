@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     const modelName = process.env.GEMINI_MODEL || "gemini-1.5-flash";
     const model = genAI.getGenerativeModel({ model: modelName });
 
-    const prompt = `You are the CampusOS official notice summarizer for City University (Birulia, Savar, Dhaka-1340, Bangladesh).
+    const prompt = `You are the Campus-OS official notice summarizer for City University (Birulia, Savar, Dhaka-1340, Bangladesh).
 Analyze the following university notice text and provide:
 1. "enSummary": 2-3 key takeaway bullet points in English.
 2. "bnSummary": 2-3 key takeaway bullet points in clear, natural Bangla.

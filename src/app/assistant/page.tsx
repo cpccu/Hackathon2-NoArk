@@ -48,8 +48,8 @@ export default function AssistantPage() {
       sender: "bot",
       text:
         language === "bn"
-          ? "আসসালামু আলাইকুম! আমি সিটি ইউনিভার্সিটি ক্যাম্পাস সহকারী (CampusOS AI)। ভর্তি, ওয়েভার, ক্লাসের নিয়মকানুন বা বাসের শিডিউল সম্পর্কে আমাকে জিজ্ঞাসা করতে পারেন।"
-          : "Hello! I am the CampusOS AI Assistant for City University. Ask me about admission eligibility, fee waivers, campus shuttle routes, or examination rules.",
+          ? "আসসালামু আলাইকুম! আমি সিটি ইউনিভার্সিটি ক্যাম্পাস সহকারী (Campus-OS AI)। ভর্তি, ওয়েভার, ক্লাসের নিয়মকানুন বা বাসের শিডিউল সম্পর্কে আমাকে জিজ্ঞাসা করতে পারেন।"
+          : "Hello! I am the Campus-OS AI Assistant for City University. Ask me about admission eligibility, fee waivers, campus shuttle routes, or examination rules.",
       sources: ["Official Campus Registry"],
       timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
     },

@@ -103,7 +103,7 @@ export default function EventDetailPage() {
     const startDate = new Date(event.startAt).toISOString().replace(/-|:|\.\d\d\d/g, "");
     const endDate = new Date(event.endAt).toISOString().replace(/-|:|\.\d\d\d/g, "");
     const title = encodeURIComponent(event.title);
-    const details = encodeURIComponent(`${event.description}\n\nOrganized by: ${event.clubName}\nCity University CampusOS`);
+    const details = encodeURIComponent(`${event.description}\n\nOrganized by: ${event.clubName}\nCity University Campus-OS`);
     const location = encodeURIComponent(`${event.location}, City University, Savar, Dhaka`);
 
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}&ctz=Asia/Dhaka`;
@@ -117,7 +117,7 @@ export default function EventDetailPage() {
     const icsData = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//City University//CampusOS Events//EN",
+      "PRODID:-//City University//Campus-OS Events//EN",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
       "BEGIN:VEVENT",

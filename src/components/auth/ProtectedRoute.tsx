@@ -30,7 +30,7 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children, allowe
         <div className="flex flex-col items-center gap-3">
           <div className="w-8 h-8 border-3 border-campus-navy-800 border-t-transparent rounded-full animate-spin" />
           <p className="text-xs uppercase tracking-widest text-slate-500 font-semibold">
-            Authenticating CampusOS session...
+            Authenticating Campus-OS session...
           </p>
         </div>
       </div>

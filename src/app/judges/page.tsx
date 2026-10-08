@@ -207,7 +207,7 @@ export default function JudgesPortalPage() {
                 <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300">
                   <th className="py-2.5 px-3 font-semibold">Criterion</th>
                   <th className="py-2.5 px-3 font-semibold">Marks</th>
-                  <th className="py-2.5 px-3 font-semibold">How CampusOS Satisfies It</th>
+                  <th className="py-2.5 px-3 font-semibold">How Campus-OS Satisfies It</th>
                   <th className="py-2.5 px-3 font-semibold">Where to Verify</th>
                 </tr>
               </thead>
@@ -294,7 +294,7 @@ export default function JudgesPortalPage() {
           <div className="flex items-center gap-2 mb-4">
             <Zap className="w-5 h-5 text-campus-gold-600 dark:text-campus-gold-400" />
             <h2 className="font-serif text-base font-bold text-slate-900 dark:text-slate-100">
-              4. Six Student Frictions Solved by CampusOS
+              4. Six Student Frictions Solved by Campus-OS
             </h2>
           </div>
 

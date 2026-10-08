@@ -85,7 +85,13 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Fully articulated `README.md` with friction mapping, architecture mermaid diagram, free tier rules, and local setup
   - `/judges` portal with 2-minute walkthrough path, criteria mapping (100 marks), and role credentials
   - `docs/DEMO_ACCOUNTS.md`, `docs/ARCHITECTURE.md`, `docs/DATA_SOURCES.md`, `docs/FREE_TIER.md`, `docs/TEST_REPORT.md`, `docs/LIGHTHOUSE.md`, and `CONTRIBUTING.md`
-- [ ] **Phase 12: Class Updates, Forms Directory, Today Dashboard & Global Search**
+- [x] **Phase 12: Class Updates, Forms Directory, Today Dashboard & Global Search**
+  - Live Class Updates feed (`/updates`) with Department, Batch, and notice category filtering, Today/Tomorrow labels, and `.ics` iCalendar calendar downloads
+  - Class update broadcast creation modal for authorized coordinators and club executives
+  - Forms & Groups Directory (`/directory`) with "Start Here" essential portals, "Closing Soon" urgent alerts, category filters, and student suggestion workflow
+  - Enhanced Today Dashboard (`/dashboard`) featuring real-time Next Bus departure countdown, batch-targeted class cancellations, upcoming 48-hour event radar, and persistent First-Week Orientation Checklist
+  - Global Search page (`/search`) with categorized instant client-side index across events, bus, study notes, FAQs, and portals
+  - System Admin Portal (`/admin`) with volume analytics, registration capacity charts, department engagement distribution, and RAG unanswered inquiries telemetry log
 - [ ] **Phase 13: Notice Summariser, Club Quiz, Timetable Conflict Checker & PWA**
 - [ ] **Phase 14: QA Audit & Test Report**
 - [ ] **Phase 15: Free-Tier Quota & Security Audit**

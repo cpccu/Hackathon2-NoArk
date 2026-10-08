@@ -89,6 +89,30 @@ export const translations = {
       askBot: "Chat with Campus Assistant",
       officialPhone: "Telephone Query Line: 09643-234234",
     },
+    // Class Updates
+    updates: {
+      title: "Class Updates & Notices",
+      subtitle: "Instant schedule cancellations, reschedules, and academic room changes.",
+      postUpdate: "Post Class Update",
+      filterByDept: "Filter by Department",
+      filterByBatch: "Filter by Batch",
+      allDepts: "All Departments",
+      cancelled: "Class Cancelled",
+      rescheduled: "Class Rescheduled",
+      exam: "Exam Routine Change",
+      general: "General Notice",
+    },
+    // Directory
+    directory: {
+      title: "Campus Directory & Quick Links",
+      subtitle: "Official portals, social communities, active Google Forms, and student groups.",
+      suggestLink: "Suggest a Form or Group",
+      closingSoon: "Closing Soon",
+      startHere: "Start Here (Essential University Portals)",
+      searchPlaceholder: "Search links, forms, or groups...",
+      openStatus: "Accepting Responses",
+      closedStatus: "Closed",
+    },
   },
   bn: {
     // Navigation & Shell
@@ -177,6 +201,30 @@ export const translations = {
       subtitle: "ভর্তি, ওয়েভার নীতিমালা, পরীক্ষার নিয়মাবলী এবং জরুরি যোগাযোগ।",
       askBot: "এআই ক্যাম্পাস সহকারীর সাথে কথা বলুন",
       officialPhone: "হেল্পলাইন: ০৯৬৪৩-২৩৪২৩৪",
+    },
+    // Class Updates
+    updates: {
+      title: "ক্লাস আপডেট ও নোটিশ",
+      subtitle: "ক্লাস বাতিল, পুনঃনির্ধারণ এবং পরীক্ষার সময়সূচির তাৎক্ষণিক আপডেট।",
+      postUpdate: "আপডেট পোস্ট করুন",
+      filterByDept: "বিভাগ অনুযায়ী ফিল্টার",
+      filterByBatch: "ব্যাচ অনুযায়ী ফিল্টার",
+      allDepts: "সকল বিভাগ",
+      cancelled: "ক্লাস বাতিল",
+      rescheduled: "ক্লাস পুনঃনির্ধারিত",
+      exam: "পরীক্ষার রুটিন পরিবর্তন",
+      general: "সাধারণ নোটিশ",
+    },
+    // Directory
+    directory: {
+      title: "ক্যাম্পাস ডিরেক্টরি ও লিংক",
+      subtitle: "অফিসিয়াল পোর্টাল, ফেসবুক গ্রুপ, গুগ্‌ল ফর্ম এবং প্রয়োজনীয় লিংক।",
+      suggestLink: "নতুন ফর্ম বা গ্রুপ প্রস্তাব করুন",
+      closingSoon: "শীঘ্রই শেষ হবে",
+      startHere: "প্রয়োজনীয় লিংক (নতুন শিক্ষার্থীদের জন্য)",
+      searchPlaceholder: "লিংক, ফর্ম বা গ্রুপ খুঁজুন...",
+      openStatus: "চলমান",
+      closedStatus: "বন্ধ",
     },
   },
 };

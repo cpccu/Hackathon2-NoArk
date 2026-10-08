@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Merriweather, Noto_Sans_Bengali } from "next/font/google";
+import { Poppins, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { ToastProvider } from "@/context/ToastContext";
 
-const inter = Inter({
+const inter = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const merriweather = Merriweather({
-  weight: ["300", "400", "700", "900"],
+const merriweather = Poppins({
+  weight: ["600", "700"],
   subsets: ["latin"],
   variable: "--font-serif",
   display: "swap",

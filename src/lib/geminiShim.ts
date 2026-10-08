@@ -23,6 +23,7 @@ export class GoogleGenerativeAI {
           method: "POST",
           headers: { "x-goog-api-key": apiKey, "Content-Type": "application/json" },
           body: JSON.stringify({ model, input: toPrompt(input) }),
+          signal: AbortSignal.timeout(20000),
         });
         if (!res.ok) throw new Error(`Gemini ${res.status}: ${(await res.text()).slice(0, 200)}`);
         const data = await res.json();

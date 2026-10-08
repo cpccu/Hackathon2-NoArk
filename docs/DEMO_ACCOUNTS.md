@@ -8,7 +8,7 @@ This document provides credentials for testing and evaluation across all user pe
 
 | Role | Email | Password | Display Name | Permissions / Features |
 |---|---|---|---|---|
-| **Student** (Default) | `student@cityuniversity.edu.bd` | `CampusOS@2026` | Tanvir Rahman | Register for events, QR tickets, upvote resources, upload study materials, submit lost & found reports, claim items, track complaints. |
+| **Student** (Default) | `student@cityuniversity.edu.bd` | `CampusOS@2026` | Fuad Ahamed Rahim | Register for events, QR tickets, upvote resources, upload study materials, submit lost & found reports, claim items, track complaints. |
 | **Club Executive** (`club_admin`) | `cpc.admin@cityuniversity.edu.bd` | `CampusOS@2026` | CUCPC Executive | All student permissions + Create & edit club events, launch registration, perform QR check-in scanning, export attendee CSVs. |
 | **System Admin** (`admin`) | `admin@cityuniversity.edu.bd` | `CampusOS@2026` | Campus Administrator | Complete system access: Academic resource moderation (approve/reject/verify), complaints resolution & official audit notes, manage all events, role management. |
 

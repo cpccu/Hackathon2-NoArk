@@ -12,7 +12,7 @@ export const INITIAL_LOST_FOUND: LostFoundItem[] = [
     status: "open",
     verificationQuestion: "What is your student roll number and batch engraved on the back?",
     createdBy: "student-1",
-    createdByName: "Tanvir Rahman",
+    createdByName: "Fuad Ahamed Rahim",
     contactPhone: "01700-112233",
     createdAt: "2026-10-06T11:30:00+06:00",
     source: "demo",
@@ -73,7 +73,7 @@ export const INITIAL_COMPLAINTS: Complaint[] = [
     description: "The 07:45 AM departure from Mirpur-10 arrived 25 minutes late at campus due to an unannounced route detour via Technical Mor. Please notify students when rerouting.",
     anonymous: false,
     userId: "student-1",
-    userName: "Tanvir Rahman",
+    userName: "Fuad Ahamed Rahim",
     status: "in_review",
     timeline: [
       {

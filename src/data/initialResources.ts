@@ -45,7 +45,7 @@ export const INITIAL_RESOURCES: AcademicResource[] = [
       mimeType: "application/pdf",
     },
     uploaderId: "student-1",
-    uploaderName: "Tanvir Rahman",
+    uploaderName: "Fuad Ahamed Rahim",
     status: "approved",
     verified: true,
     upvotes: 29,

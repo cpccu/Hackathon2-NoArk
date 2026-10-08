@@ -25,7 +25,7 @@ for (const c of clubs.docs) {
 console.log("CPC club id:", clubId ?? "NOT FOUND");
 
 const accounts = [
-  { email: "student@cityuniversity.edu.bd", name: "Tanvir Rahman", role: "student", department: "CSE", batch: "58", studentId: "2026001" },
+  { email: "student@cityuniversity.edu.bd", name: "Fuad Ahamed Rahim", role: "student", department: "CSE", batch: "58", studentId: "2026001" },
   { email: "cpc.admin@cityuniversity.edu.bd", name: "CUCPC Executive", role: "club_admin", department: "CSE", batch: "57", studentId: "2026002", ...(clubId && { managedClubId: clubId }) },
   { email: "admin@cityuniversity.edu.bd", name: "Campus Administrator", role: "admin", department: "CSE", batch: "50" },
 ];

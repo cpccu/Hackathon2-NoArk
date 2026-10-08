@@ -47,7 +47,14 @@ service cloud.firestore {
     // Events collection
     match /events/{eventId} {
       allow read: if true;
-      allow create, update: if isClubAdmin();
+      allow create: if isClubAdmin();
+      // Students may only change registeredCount by exactly 1 (register or cancel)
+      allow update: if isClubAdmin() || (
+        isAuthenticated()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['registeredCount'])
+        && (request.resource.data.registeredCount == resource.data.registeredCount + 1
+            || request.resource.data.registeredCount == resource.data.registeredCount - 1)
+      );
       allow delete: if isAdmin();
     }
 

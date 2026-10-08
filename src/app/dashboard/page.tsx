@@ -385,7 +385,7 @@ export default function DashboardPage() {
           </div>
 
           {/* Right Column (1 span): First-Week Orientation Checklist */}
-          <div className="space-y-6">
+          <div className={`space-y-6 ${role !== "student" ? "hidden" : ""}`}>
             <Card className="p-5 border-campus-navy-200 dark:border-campus-navy-800">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">

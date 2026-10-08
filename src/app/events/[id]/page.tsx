@@ -271,7 +271,7 @@ export default function EventDetailPage() {
               </div>
 
               {/* Registration CTA button (leads to registration in Phase 5) */}
-              <Link href={alreadyRegistered ? "/my/events" : `/events/${event.id}/register`} className="block">
+              {!isClubAdminOrAdmin && (<Link href={alreadyRegistered ? "/my/events" : `/events/${event.id}/register`} className="block">
                 <Button
                   variant={seatsLeft > 0 ? "gold" : "secondary"}
                   className="w-full"
@@ -284,7 +284,7 @@ export default function EventDetailPage() {
                     ? "Register Seat (Free)"
                     : "Join Waitlist"}
                 </Button>
-              </Link>
+              </Link>)}
 
               {/* Calendar export buttons */}
               <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">

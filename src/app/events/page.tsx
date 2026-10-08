@@ -91,11 +91,11 @@ export default function EventsFeedPage() {
         subtitle={t.events.subtitle}
         actions={
           <div className="flex items-center gap-3">
-            <Link href="/my/events">
+            {role === "student" && (<Link href="/my/events">
               <Button variant="outline" size="sm">
                 {t.events.myTickets}
               </Button>
-            </Link>
+            </Link>)}
             {isClubAdminOrAdmin && (
               <Link href="/events/new">
                 <Button variant="gold" size="sm" className="flex items-center gap-1.5">

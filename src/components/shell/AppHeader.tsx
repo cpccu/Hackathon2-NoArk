@@ -152,14 +152,14 @@ export const AppHeader: React.FC = () => {
                         <span>{t.nav.dashboard}</span>
                       </Link>
 
-                      <Link
+                      {role === "student" && (<Link
                         href="/my/events"
                         onClick={() => setUserDropdownOpen(false)}
                         className="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
                       >
                         <Ticket className="w-3.5 h-3.5 text-slate-500" />
                         <span>My Tickets & Passes</span>
-                      </Link>
+                      </Link>)}
 
                       <Link
                         href="/tools/notice-summariser"

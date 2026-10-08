@@ -9,9 +9,7 @@ export const AppFooter: React.FC = () => {
         {/* University Info */}
         <div className="md:col-span-2">
           <div className="flex items-center space-x-2.5 mb-3">
-            <div className="h-7 w-7 rounded bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-sm">
-              CU
-            </div>
+            <div className="rounded bg-white p-1 shadow"><img src="/logo-mark.png" alt="City University" className="h-7 w-auto" /></div>
             <span className="font-serif font-bold text-base text-slate-100">City University</span>
           </div>
           <p className="text-slate-400 leading-relaxed max-w-md">

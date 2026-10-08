@@ -25,9 +25,7 @@ export default function HomePage() {
       <header className="bg-campus-navy-900 text-white border-b border-campus-navy-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="h-10 w-10 rounded-md bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-xl shadow">
-              CU
-            </div>
+            <div className="rounded-lg bg-white p-2 shadow"><img src="/logo.png" alt="City University" className="h-14 w-auto" /></div>
             <div>
               <span className="text-lg font-bold tracking-tight text-white block">City University</span>
               <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">
@@ -189,9 +187,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-3">
-              <div className="h-7 w-7 rounded bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-sm">
-                CU
-              </div>
+              <div className="rounded bg-white p-1 shadow"><img src="/logo-mark.png" alt="City University" className="h-7 w-auto" /></div>
               <span className="font-serif font-bold text-sm text-slate-100">City University</span>
             </div>
             <p className="text-slate-400 leading-relaxed">

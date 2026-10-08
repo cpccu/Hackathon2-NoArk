@@ -90,9 +90,7 @@ export default function RegisterPage() {
       <div className="md:w-5/12 bg-campus-navy-900 text-white flex flex-col justify-between p-8 lg:p-14 relative overflow-hidden">
         <div className="relative z-10">
           <div className="flex items-center space-x-3 mb-8">
-            <div className="h-10 w-10 rounded-md bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-xl shadow">
-              CU
-            </div>
+            <div className="rounded-lg bg-white p-2 shadow"><img src="/logo.png" alt="City University" className="h-14 w-auto" /></div>
             <div>
               <span className="text-xl font-bold tracking-tight text-white block">City University</span>
               <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">CampusOS Registration</span>

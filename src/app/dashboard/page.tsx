@@ -153,12 +153,12 @@ export default function DashboardPage() {
           }
           actions={
             <div className="flex items-center gap-2">
-              <Link href="/my/events">
+              {role === "student" && (<Link href="/my/events">
                 <Button variant="outline" size="sm" className="flex items-center gap-1.5 text-xs">
                   <Ticket className="w-3.5 h-3.5 text-campus-navy-600 dark:text-campus-gold-400" />
                   <span>My QR Passes</span>
                 </Button>
-              </Link>
+              </Link>)}
               <Link href="/assistant">
                 <Button variant="primary" size="sm" className="flex items-center gap-1.5 text-xs">
                   <Sparkles className="w-3.5 h-3.5" />
@@ -173,6 +173,29 @@ export default function DashboardPage() {
           className="mb-8"
           message="CampusOS is synchronized to Asia/Dhaka time. Notice and schedule changes reflect official department postings."
         />
+
+        {role === "admin" && (
+          <div className="mb-8 rounded-xl border border-campus-navy-200 bg-campus-navy-50 p-5">
+            <h2 className="font-serif text-lg font-bold text-campus-navy-800">Administrator Console</h2>
+            <p className="text-sm text-slate-600 mt-1">Moderate content and resolve student issues.</p>
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <Link href="/admin/resources" className="rounded-lg bg-white border border-slate-200 p-4 hover:border-campus-navy-600 transition"><div className="text-sm font-semibold">Resource Moderation</div><div className="text-xs text-slate-500 mt-1">Approve, reject or verify uploads</div></Link>
+              <Link href="/admin/complaints" className="rounded-lg bg-white border border-slate-200 p-4 hover:border-campus-navy-600 transition"><div className="text-sm font-semibold">Complaints Desk</div><div className="text-xs text-slate-500 mt-1">Add resolution notes and audit trail</div></Link>
+              <Link href="/events" className="rounded-lg bg-white border border-slate-200 p-4 hover:border-campus-navy-600 transition"><div className="text-sm font-semibold">All Events</div><div className="text-xs text-slate-500 mt-1">Oversee every club event</div></Link>
+            </div>
+          </div>
+        )}
+        {role === "club_admin" && (
+          <div className="mb-8 rounded-xl border border-campus-gold-200 bg-campus-gold-50 p-5">
+            <h2 className="font-serif text-lg font-bold text-campus-gold-800">Club Executive Panel</h2>
+            <p className="text-sm text-slate-600 mt-1">Run your club events: registrations, QR check-in and attendee exports.</p>
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <Link href="/events" className="rounded-lg bg-white border border-slate-200 p-4 hover:border-campus-gold-600 transition"><div className="text-sm font-semibold">Manage Club Events</div><div className="text-xs text-slate-500 mt-1">Open an event, then use QR Check-in Scanner</div></Link>
+              <Link href="/events/evt-hackathon-2026/checkin" className="rounded-lg bg-white border border-slate-200 p-4 hover:border-campus-gold-600 transition"><div className="text-sm font-semibold">Hackathon Check-in</div><div className="text-xs text-slate-500 mt-1">Scan or enter ticket tokens</div></Link>
+            </div>
+          </div>
+        )}
+
 
         {/* Live Banner: Next Bus Countdown */}
         {nextBus && (

@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import { signOut } from "firebase/auth";
+import { auth } from "@/lib/firebase/client";
 import { Eye, EyeOff, Lock, Mail, ArrowRight, AlertCircle, CheckCircle2, ShieldCheck } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
-  const { loginWithEmail, signInWithGoogle, user, isEmailVerified } = useAuth();
+  const { loginWithEmail, signInWithGoogle, user, profile, isEmailVerified } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,12 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [selectedRole, setSelectedRole] = useState<"student" | "club_admin" | "admin">("student");
+  const ROLE_TABS = [
+    { id: "student", label: "Student", email: "student@cityuniversity.edu.bd" },
+    { id: "club_admin", label: "Club Executive", email: "cpc.admin@cityuniversity.edu.bd" },
+    { id: "admin", label: "Administrator", email: "admin@cityuniversity.edu.bd" },
+  ] as const;
 
   // If already logged in
   React.useEffect(() => {
@@ -23,10 +31,17 @@ export default function LoginPage() {
       if (!isEmailVerified) {
         router.push("/verify-email");
       } else {
-        router.push("/dashboard");
+        if (!profile) return;
+      if (profile.role !== selectedRole) {
+        const label = ROLE_TABS.find((r) => r.id === selectedRole)?.label;
+        setError(`This account is not registered as ${label}. Choose the correct role tab.`);
+        signOut(auth);
+        return;
+      }
+      router.push("/dashboard");
       }
     }
-  }, [user, isEmailVerified, router]);
+  }, [user, profile, isEmailVerified, router, selectedRole]);
 
   const mapAuthError = (errCode: string): string => {
     if (errCode.includes("user-not-found")) return "No account registered with this email address.";
@@ -156,6 +171,29 @@ export default function LoginPage() {
               </div>
             </div>
           )}
+
+          {/* Role selector */}
+          <div className="mb-6">
+            <p className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-2">Sign in as</p>
+            <div className="grid grid-cols-3 gap-2" role="tablist">
+              {ROLE_TABS.map((r) => (
+                <button
+                  key={r.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={selectedRole === r.id}
+                  onClick={() => { setSelectedRole(r.id); setEmail(r.email); setError(null); }}
+                  className={`py-2 px-2 rounded-md text-xs font-semibold border transition ${
+                    selectedRole === r.id
+                      ? "bg-campus-navy-600 text-white border-campus-navy-600"
+                      : "bg-white text-slate-700 border-slate-300 hover:border-campus-navy-600"
+                  }`}
+                >
+                  {r.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
           {/* Google Sign-in */}
           <button

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@/lib/geminiShim";
 import { adminAuth, adminDb } from "@/lib/firebase/admin";
 import officialFacts from "@/data/official-facts.json";
 import { INITIAL_FAQS } from "@/data/initialFaqs";

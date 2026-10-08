@@ -17,6 +17,10 @@ import {
   Shield,
   ChevronDown,
   Ticket,
+  Sparkles,
+  Compass,
+  Calendar,
+  Settings,
 } from "lucide-react";
 
 export const AppHeader: React.FC = () => {
@@ -159,6 +163,42 @@ export const AppHeader: React.FC = () => {
                       >
                         <Ticket className="w-3.5 h-3.5 text-slate-500" />
                         <span>My Tickets & Passes</span>
+                      </Link>
+
+                      <Link
+                        href="/tools/notice-summariser"
+                        onClick={() => setUserDropdownOpen(false)}
+                        className="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 text-campus-gold-500" />
+                        <span>AI Notice Summariser</span>
+                      </Link>
+
+                      <Link
+                        href="/onboarding/clubs"
+                        onClick={() => setUserDropdownOpen(false)}
+                        className="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                      >
+                        <Compass className="w-3.5 h-3.5 text-slate-500" />
+                        <span>Club Discovery Quiz</span>
+                      </Link>
+
+                      <Link
+                        href="/tools/timetable"
+                        onClick={() => setUserDropdownOpen(false)}
+                        className="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                      >
+                        <Calendar className="w-3.5 h-3.5 text-slate-500" />
+                        <span>Timetable Checker</span>
+                      </Link>
+
+                      <Link
+                        href="/settings"
+                        onClick={() => setUserDropdownOpen(false)}
+                        className="flex items-center gap-2 px-3.5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                      >
+                        <Settings className="w-3.5 h-3.5 text-slate-500" />
+                        <span>Preferences & Settings</span>
                       </Link>
 
                       {role === "admin" && (

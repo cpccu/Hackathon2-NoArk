@@ -92,7 +92,11 @@ Deadline: **8 October 2026, 8:00 pm (Asia/Dhaka)**.
   - Enhanced Today Dashboard (`/dashboard`) featuring real-time Next Bus departure countdown, batch-targeted class cancellations, upcoming 48-hour event radar, and persistent First-Week Orientation Checklist
   - Global Search page (`/search`) with categorized instant client-side index across events, bus, study notes, FAQs, and portals
   - System Admin Portal (`/admin`) with volume analytics, registration capacity charts, department engagement distribution, and RAG unanswered inquiries telemetry log
-- [ ] **Phase 13: Notice Summariser, Club Quiz, Timetable Conflict Checker & PWA**
+- [x] **Phase 13: Notice Summariser, Club Quiz, Timetable Conflict Checker & PWA**
+  - AI Notice Summariser (`/tools/notice-summariser` and `/api/notices/summarize`) extracting bilingual English/Bangla takeaways, deadlines, and `.ics` calendar sync
+  - Club Affinity Discovery Quiz (`/onboarding/clubs`) with 6 multi-dimensional interest questions, transparent weighted scoring across all 12 clubs, and instant follow flow
+  - Weekly Timetable Conflict Checker (`/tools/timetable`) cross-referencing Sunday–Thursday lecture and lab slots against registered campus events to flag attendance clashes
+  - Progressive Web App manifest (`public/manifest.json`), network connection status telemetry, and user preferences hub (`/settings`)
 - [ ] **Phase 14: QA Audit & Test Report**
 - [ ] **Phase 15: Free-Tier Quota & Security Audit**
 - [ ] **Phase 16: UI/UX Polish, Accessibility & Dark Mode**

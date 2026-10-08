@@ -13,16 +13,6 @@ export const INITIAL_DIRECTORY: DirectoryEntry[] = [
     source: "official",
   },
   {
-    id: "dir-2",
-    title: "City University Official Student Portal (Orbund FreshAir)",
-    title_bn: "সিটি ইউনিভার্সিটি অফিসিয়াল স্টুডেন্ট পোর্টাল",
-    kind: "official_link",
-    url: "https://cityuniversity.orbund.com/einstein-freshair/index.jsp",
-    description: "Academic profile, faculty evaluations, fee slips, and institutional notices.",
-    isOpen: true,
-    source: "official",
-  },
-  {
     id: "dir-3",
     title: "Central Library Management System (Kohaa)",
     title_bn: "কেন্দ্রীয় গ্রন্থাগার ব্যবস্থাপনা সিস্টেম (কোহা)",

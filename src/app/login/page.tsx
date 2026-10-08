@@ -99,11 +99,9 @@ export default function LoginPage() {
 
         <div className="relative z-10">
           <div className="flex items-center space-x-3 mb-8">
-            <div className="h-10 w-10 rounded-md bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-xl shadow">
-              CU
-            </div>
+            <div className="rounded-lg bg-white p-2 shadow"><img src="/logo.png" alt="City University" className="h-14 w-auto" /></div>
             <div>
-              <span className="text-xl font-bold tracking-tight text-white block">City University</span>
+              
               <span className="text-xs uppercase tracking-widest text-campus-gold-400 font-semibold">CampusOS Portal</span>
             </div>
           </div>

@@ -65,13 +65,9 @@ export const AppHeader: React.FC = () => {
             {/* Logo and Campus Branding */}
             <div className="flex items-center space-x-6">
               <Link href="/" className="flex items-center space-x-2.5 group">
-                <div className="h-9 w-9 rounded bg-campus-gold-500 text-campus-navy-950 flex items-center justify-center font-serif font-bold text-base shadow group-hover:bg-campus-gold-400 transition">
-                  CU
-                </div>
+                <div className="h-10 rounded-md bg-white px-2 flex items-center shadow"><img src="/logo.png" alt="City University" className="h-8 w-auto" /></div>
                 <div>
-                  <span className="font-serif font-bold text-base tracking-tight text-white block leading-tight">
-                    City University
-                  </span>
+                  
                   <span className="text-[10px] uppercase tracking-widest text-campus-gold-400 font-semibold block leading-tight">
                     CampusOS
                   </span>
